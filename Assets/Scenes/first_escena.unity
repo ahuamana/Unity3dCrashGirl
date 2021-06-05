@@ -450,6 +450,7 @@ GameObject:
   - component: {fileID: 866019578}
   - component: {fileID: 866019579}
   - component: {fileID: 866019580}
+  - component: {fileID: 866019581}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -500,7 +501,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!95 &866019580
 Animator:
@@ -515,12 +516,26 @@ Animator:
   m_Controller: {fileID: 9100000, guid: 96434d2bb9121254b92b35fa5bdf1dcd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &866019581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 866019576}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74f74292dc11da4b93a3914e631ca51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speedPlayer: 10
+  speedPlayerRotation: 250
 --- !u!4 &997605903 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400122, guid: 252fd4802fe65554887a6a150702ee14,

@@ -10,6 +10,13 @@ public class PlayerController : MonoBehaviour
     public float speedPlayer = 10;
     public float speedPlayerRotation = 250;
 
+    private Animator anim;
+
+    private void Start()
+    {
+        anim = gameObject.GetComponent<Animator>();
+    }
+
     // Update is called once per frame
     void Update()
     {
@@ -27,5 +34,10 @@ public class PlayerController : MonoBehaviour
         
         }
 
+    }
+
+    private void FixedUpdate()
+    {
+        anim.SetFloat("Speed", Mathf.Abs(verticalInput));
     }
 }

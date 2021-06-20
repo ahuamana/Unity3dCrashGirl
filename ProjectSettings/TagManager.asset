@@ -7,6 +7,8 @@ TagManager:
   - Ground
   - Trap
   - Vida
+  - Enemy
+  - Star
   layers:
   - Default
   - TransparentFX

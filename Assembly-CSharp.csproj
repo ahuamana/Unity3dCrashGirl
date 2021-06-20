@@ -68,7 +68,9 @@
     <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\MouseLook.cs" />
     <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Enemies\EnemyControllerDragonTiny.cs" />
     <Compile Include="Assets\Scripts\Player\CollisionTrap.cs" />
+    <Compile Include="Assets\Scripts\Player\Collisions\CollisionStar.cs" />
     <Compile Include="Assets\Scripts\Player\LivesManger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\aumentarVida.cs" />

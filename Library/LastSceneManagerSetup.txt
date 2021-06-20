@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/first_escena.unity
+- path: Assets/Meshtint Free Tile Map Mega Toon Series/Scenes/Demo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

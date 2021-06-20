@@ -64,8 +64,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\City\Common Scripts\Turn_Move.cs" />
+    <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\MouseLook.cs" />
+    <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\Waypoint.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
+    <Compile Include="Assets\Scripts\Player\CollisionTrap.cs" />
+    <Compile Include="Assets\Scripts\Player\LivesManger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
+    <Compile Include="Assets\Scripts\Player\aumentarVida.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

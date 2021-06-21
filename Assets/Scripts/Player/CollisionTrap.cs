@@ -11,25 +11,26 @@ public class CollisionTrap : MonoBehaviour
     public float time;
     public float tiempopoEsperaParaAtaque = 0.5f;
 
-    private void OnCollisionEnter(Collision collision)
+
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collision.gameObject.CompareTag("Trap"))
+        if (hit.gameObject.CompareTag("Trap"))
         {
-            
-            //Debug.Log("colisiono with trap");
+            Debug.Log("colisiono with trap");
             playerDentro = true;
         }
-    }
-
-    private void OnCollisionExit(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Trap"))
+        else
         {
-            //Debug.Log("salio de la trampa");
-            playerDentro = false;
+            if (!hit.gameObject.CompareTag("Trap"))
+            {
+                Debug.Log("player salio de la trampa");
+                playerDentro = false;
+            }
         }
-
     }
+
+   
 
     private void Update()
     {

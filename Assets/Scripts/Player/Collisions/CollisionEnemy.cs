@@ -42,9 +42,11 @@ public class CollisionEnemy : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision collision)
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collision.gameObject.CompareTag("Enemy"))
+
+        if (hit.gameObject.CompareTag("Enemy"))
         {
             StartCoroutine(Hit());
             LivesManger.instance.disminuirVida(cantidadDisminuir);

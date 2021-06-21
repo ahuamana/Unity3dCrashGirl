@@ -6,14 +6,13 @@ public class CollisionStar : MonoBehaviour
 {
 
 
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Star"))
-        {
 
-            Destroy(collision.gameObject);
-        
-        }    
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("Star"))
+        {
+            Destroy(hit.gameObject);
+        }
     }
 
 }

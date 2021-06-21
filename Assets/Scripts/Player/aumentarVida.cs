@@ -8,19 +8,20 @@ public class aumentarVida : MonoBehaviour
     string objeto;
     public GameObject objecto;
 
-    private void OnCollisionEnter(Collision collision)
+    
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
     {
-        if (collision.gameObject.CompareTag("Vida"))
+        if (hit.gameObject.CompareTag("Vida"))
         {
             LivesManger.instance.aumentarVida();
-            collision.gameObject.SetActive(false); //ocultar vida
+            hit.gameObject.SetActive(false); //ocultar vida
             LivesManger.instance.tiempoVida = 0;
-            objecto = collision.gameObject;
+            objecto = hit.gameObject;
 
         }
-
-
     }
+
 
     void Update()
     {

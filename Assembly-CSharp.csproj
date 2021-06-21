@@ -606,6 +606,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Cinemachine">
+      <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.VSCode.Editor">
       <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
@@ -624,17 +627,14 @@
     <Reference Include="Unity.Rider.Editor">
       <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="com.unity.cinemachine.editor">
+      <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.TextMeshPro">
       <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
-    </Reference>
-    <Reference Include="Cinemachine">
-      <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/Cinemachine.dll</HintPath>
-    </Reference>
-    <Reference Include="com.unity.cinemachine.editor">
-      <HintPath>D:/Antony/Desarrollo/Unity/3D/ProjectOwnerVideojuego01/Library/ScriptAssemblies/com.unity.cinemachine.editor.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup></ItemGroup>

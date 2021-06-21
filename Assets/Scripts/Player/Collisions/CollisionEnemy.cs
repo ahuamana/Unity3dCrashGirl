@@ -11,6 +11,8 @@ public class CollisionEnemy : MonoBehaviour
     Rigidbody rigidbody;
 
 
+
+
     private void Start()
     {
         rigidbody = gameObject.GetComponent<Rigidbody>();

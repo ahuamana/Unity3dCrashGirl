@@ -7,7 +7,7 @@ public class PlayerController : MonoBehaviour
 
     float verticalInput;
     float horizontalInput;
-    public float speedPlayer = 5;
+    public float speedPlayer = 5f;
     public float speedPlayerRotation = 250;
     public float jumpSpeed = 200f;
 
@@ -18,10 +18,17 @@ public class PlayerController : MonoBehaviour
     public bool isGrounded = false;
     public float groundDistance = 0.5f;
 
+    Vector3 direction;
+    Vector3 moveDir;
+    public CharacterController controller;
+    public float turnSmothTime = 0.1f;
+    float turnSmoothVelocity;
+
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
         rigidbody = gameObject.GetComponent<Rigidbody>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
     // Update is called once per frame
@@ -36,18 +43,6 @@ public class PlayerController : MonoBehaviour
             rigidbody.AddForce(new Vector2(0, jumpSpeed));
         }
 
-
-    }
-
-    private void FixedUpdate()
-    {
-        //Actualizar el animator y asignar la velocidad en cada frame
-        anim.SetFloat("Speed", Mathf.Abs(verticalInput));
-
-        //Verificar si pisa el suelo o no
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundDistance);
-
-
         //Movimiento
         ////avanzar
         verticalInput = Input.GetAxis("Vertical");
@@ -60,23 +55,48 @@ public class PlayerController : MonoBehaviour
 
 
 
-        Vector3 monement = new Vector3(horizontalInput, 0, verticalInput).normalized;
-       
+        direction = new Vector3(horizontalInput, 0f, verticalInput).normalized;
 
-        if (monement == Vector3.zero)
+
+
+        if (direction.magnitude >= 0.1f)
         {
-            return;
+            float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;//angulo a donde girar
+            float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmothTime);
+
+            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+
+            moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
+
+            controller.Move(moveDir.normalized * speedPlayer * Time.deltaTime); // move in diferent directions
         }
 
-        Quaternion targetRotation = Quaternion.LookRotation(monement);
-        Debug.Log(targetRotation.eulerAngles);
-        targetRotation = Quaternion.RotateTowards(transform.rotation, targetRotation, 360 * Time.fixedDeltaTime);
 
-        ////Mover la position
-        rigidbody.MovePosition(rigidbody.position + monement * speedPlayer * Time.fixedDeltaTime);
-        ////Mover la rotacion
-        rigidbody.MoveRotation(targetRotation);
+    }
 
+    private void FixedUpdate()
+    {
+        //Actualizar el animator y asignar la velocidad en cada frame si presiona "arriba" o "abajo"
+
+        if (verticalInput != 0)
+        {
+            anim.SetFloat("Speed", Mathf.Abs(verticalInput));
+        }
+        else {
+            anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
+        }
+        
+
+        //Actualizar el animator y asignar la velocidad en cada frame si presiona "derecha" o "izquierda"
+       
+
+        Debug.Log(moveDir);
+
+        //Verificar si pisa el suelo o no
+        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundDistance);
+
+
+        
 
 
     }

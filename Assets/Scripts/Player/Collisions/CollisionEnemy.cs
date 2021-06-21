@@ -8,14 +8,14 @@ public class CollisionEnemy : MonoBehaviour
     public float tiempo;
     public bool isAttacked = false;
     public bool isInvulnerable = false;
-    Rigidbody rigidbody;
+    CharacterController controller;
 
 
 
 
     private void Start()
     {
-        rigidbody = gameObject.GetComponent<Rigidbody>();
+        controller = gameObject.GetComponent<CharacterController>();
     }
 
 
@@ -25,6 +25,7 @@ public class CollisionEnemy : MonoBehaviour
 
         //Debug.Log("timepo: " + tiempo);
 
+        Debug.Log(gameObject.transform.position.x + " :" + gameObject.transform.position.z);
     }
 
    
@@ -39,6 +40,7 @@ public class CollisionEnemy : MonoBehaviour
 
         isAttacked = false;
 
+       
 
     }
 
@@ -52,7 +54,8 @@ public class CollisionEnemy : MonoBehaviour
             LivesManger.instance.disminuirVida(cantidadDisminuir);
 
             //Retroceder
-            rigidbody.AddForce(Vector3.forward, ForceMode.Impulse);
+            Vector3 distanciaRetroceder = new Vector3(0, 0, 1.5f);
+            controller.Move(distanciaRetroceder);
         }
     }
 

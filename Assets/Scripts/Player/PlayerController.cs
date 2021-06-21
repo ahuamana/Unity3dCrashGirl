@@ -16,7 +16,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody rigidbody;
 
     public bool isGrounded = false;
-    public float groundDistance = 0.5f;
+    public float groundDistance = 0.1f;
 
     Vector3 direction;
     Vector3 moveDir;
@@ -34,13 +34,20 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
 
+        //Verificar si pisa el suelo o no
+        //isGrounded = Physics.Raycast(controller.transform.position, Vector3.down, groundDistance);
+        isGrounded = controller.isGrounded; // changed with character controller to detect if is grounded
 
         //Saltar
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            rigidbody.AddForce(new Vector2(0, jumpSpeed));
+            //rigidbody.AddForce(new Vector2(0, jumpSpeed));
+            Vector3 velocity; 
+            velocity.y = Mathf.Sqrt(10 * -2 * 9);
+
+            controller.Move(Vector3.up);
+            
         }
 
         //Movimiento
@@ -71,13 +78,16 @@ public class PlayerController : MonoBehaviour
             controller.Move(moveDir.normalized * speedPlayer * Time.deltaTime); // move in diferent directions
         }
 
+        
+
 
     }
 
     private void FixedUpdate()
     {
-        //Actualizar el animator y asignar la velocidad en cada frame si presiona "arriba" o "abajo"
+        
 
+        //Asignar animacion si presiona "arriba" o "abajo" o derecha izquierda
         if (verticalInput != 0)
         {
             anim.SetFloat("Speed", Mathf.Abs(verticalInput));
@@ -86,14 +96,9 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
         }
         
+        
 
-        //Actualizar el animator y asignar la velocidad en cada frame si presiona "derecha" o "izquierda"
-       
-
-        Debug.Log(moveDir);
-
-        //Verificar si pisa el suelo o no
-        isGrounded = Physics.Raycast(transform.position, Vector3.down, groundDistance);
+        
 
 
         

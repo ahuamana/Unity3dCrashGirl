@@ -70,6 +70,7 @@
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyControllerDragonTiny.cs" />
     <Compile Include="Assets\Scripts\Player\CollisionTrap.cs" />
+    <Compile Include="Assets\Scripts\Player\Collisions\CollisionEnemy.cs" />
     <Compile Include="Assets\Scripts\Player\Collisions\CollisionStar.cs" />
     <Compile Include="Assets\Scripts\Player\LivesManger.cs" />
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />

@@ -54,6 +54,7 @@ public class PlayerController : MonoBehaviour
         {
             //rigidbody.AddForce(new Vector2(0, jumpSpeed));
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityValue);
+            anim.SetTrigger("Jump");
 
         }
 
@@ -97,7 +98,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        
+
+        Debug.Log(verticalInput + " + " + horizontalInput);
 
         //Asignar animacion si presiona "arriba" o "abajo" o derecha izquierda
         if (verticalInput != 0)

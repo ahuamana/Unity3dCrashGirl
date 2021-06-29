@@ -14,7 +14,11 @@ public class PlayerController : MonoBehaviour
     private Animator anim;
 
 
-    public bool isGrounded = false;
+    public bool isGrounded;
+    public float jumpHeight = 1.0f;
+    public float gravityValue = -9.81f;
+    public Vector3 playerVelocity;
+
     public float groundDistance = 0.1f;
 
     Vector3 direction;
@@ -22,6 +26,7 @@ public class PlayerController : MonoBehaviour
     public CharacterController controller;
     public float turnSmothTime = 0.1f;
     float turnSmoothVelocity;
+
 
     private void Start()
     {
@@ -37,16 +42,25 @@ public class PlayerController : MonoBehaviour
         //isGrounded = Physics.Raycast(controller.transform.position, Vector3.down, groundDistance);
         isGrounded = controller.isGrounded; // changed with character controller to detect if is grounded
 
+        if (isGrounded && playerVelocity.y < 0)
+        {
+            playerVelocity.y = 0f;
+        }
+
+
+
         //Saltar
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             //rigidbody.AddForce(new Vector2(0, jumpSpeed));
-            Vector3 velocity; 
-            velocity.y = Mathf.Sqrt(10 * -2 * 9);
+            playerVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityValue);
 
-            controller.Move(Vector3.up);
-            
         }
+
+        playerVelocity.y += gravityValue * Time.deltaTime;
+        controller.Move(playerVelocity * Time.deltaTime);
+
+        //Fin Saltar
 
         //Movimiento
         ////avanzar

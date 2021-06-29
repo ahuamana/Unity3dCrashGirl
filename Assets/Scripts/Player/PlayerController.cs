@@ -13,7 +13,6 @@ public class PlayerController : MonoBehaviour
 
     private Animator anim;
 
-    private Rigidbody rigidbody;
 
     public bool isGrounded = false;
     public float groundDistance = 0.1f;
@@ -27,7 +26,6 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         anim = gameObject.GetComponent<Animator>();
-        rigidbody = gameObject.GetComponent<Rigidbody>();
         controller = gameObject.GetComponent<CharacterController>();
     }
 

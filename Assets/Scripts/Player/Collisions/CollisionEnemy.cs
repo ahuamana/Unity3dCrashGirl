@@ -25,7 +25,7 @@ public class CollisionEnemy : MonoBehaviour
 
         //Debug.Log("timepo: " + tiempo);
 
-        Debug.Log(gameObject.transform.position.x + " :" + gameObject.transform.position.z);
+        //Debug.Log(gameObject.transform.position.x + " :" + gameObject.transform.position.z);
     }
 
    

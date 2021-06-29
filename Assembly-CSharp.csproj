@@ -78,6 +78,8 @@
     <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
     <Compile Include="Assets\Scripts\Player\StarManager.cs" />
     <Compile Include="Assets\Scripts\Player\aumentarVida.cs" />
+    <Compile Include="Assets\Scripts\SceneManager\ManageScenes.cs" />
+    <Compile Include="Assets\Scripts\items\PortalsBehavior.cs" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

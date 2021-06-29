@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded && playerVelocity.y < 0)
         {
             playerVelocity.y = 0f;
+            //anim.ResetTrigger("Jump");//change the state of jumping if player is grounded
         }
 
 

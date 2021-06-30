@@ -8,9 +8,7 @@ public class SoundsManager : MonoBehaviour
 
     public static SoundsManager instance;
 
-    //music
-    public AudioClip music_background;
-
+   
     //Sound Effects
     public AudioClip sfx_jump, sfx_money, sfx_flecha, sfx_Health, sfx_muerteFuego, sfx_attackEfecto;
 
@@ -58,18 +56,14 @@ public class SoundsManager : MonoBehaviour
                 SoundObjectCreation(sfx_Health);
                 break;
 
-            case "muerteFuego":
+            case "muerte_fuego":
                 SoundObjectCreation(sfx_muerteFuego);
                 break;
 
-            case "attackEfecto":
+            case "attack_efecto":
                 SoundObjectCreation(sfx_attackEfecto);
                 break;
-
-            case "background":
-                SoundObjectCreation(music_background);
-                break;
-
+         
             default:
                 Debug.Log("not sound found");
                 break;

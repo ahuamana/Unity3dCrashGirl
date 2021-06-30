@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     public float turnSmothTime = 0.1f;
     float turnSmoothVelocity;
 
+    int contador = 0;
 
     public GameObject[] shotsPrefabs;
 
@@ -57,6 +58,7 @@ public class PlayerController : MonoBehaviour
         //Saltar
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
+            contador--;
             //rigidbody.AddForce(new Vector2(0, jumpSpeed));
             playerVelocity.y = Mathf.Sqrt(jumpHeight * -2 * gravityValue);
             anim.SetTrigger("Jump");
@@ -103,7 +105,38 @@ public class PlayerController : MonoBehaviour
 
         positionFireball = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
 
+
+        //Actualizar saltos
+        updateJumps();
+
     }
+
+    private void updateJumps()
+    {
+        if (contador == 0)
+        {
+            jumpHeight = 1f;
+        }
+        else
+        {
+            if (contador == 1)
+            {
+                //Aumentar salto
+                jumpHeight = 5f;
+            }
+            
+        }
+    }
+
+    private void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (hit.gameObject.CompareTag("potion"))
+        {
+            contador++;
+            Destroy(hit.gameObject);
+        }
+    }
+
 
     private void shotAttack()
     {
@@ -121,10 +154,6 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-
-
-        
-
         //Debug.Log(verticalInput + " + " + horizontalInput);
 
         //Asignar animacion si presiona "arriba" o "abajo" o derecha izquierda
@@ -136,14 +165,7 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("Speed", Mathf.Abs(horizontalInput));
         }
         
-        
-
-        
-
-
-        
-
-
+       
     }
 
    

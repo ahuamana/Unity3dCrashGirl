@@ -9,6 +9,8 @@ TagManager:
   - Vida
   - Enemy
   - Star
+  - potion_yellow
+  - potion
   layers:
   - Default
   - TransparentFX

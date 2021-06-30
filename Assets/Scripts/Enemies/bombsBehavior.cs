@@ -12,6 +12,7 @@ public class bombsBehavior : MonoBehaviour
         {
             Debug.Log("Colisiono con enemigo");
             Destroy(collision.gameObject, 1.0f);
+            SoundsManager.instance.PlaySFX("muerte_fuego");
             Destroy(gameObject);
         }
     }

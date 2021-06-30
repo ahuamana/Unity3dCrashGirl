@@ -29,7 +29,8 @@ public class PlayerController : MonoBehaviour
     public float turnSmothTime = 0.1f;
     float turnSmoothVelocity;
 
-    int contador = 0;
+    public int contador = 0;
+    GameObject objetoPosition;
 
     public GameObject[] shotsPrefabs;
 
@@ -109,6 +110,23 @@ public class PlayerController : MonoBehaviour
         //Actualizar saltos
         updateJumps();
 
+        //Actualizar potion
+        updatePotion();
+
+       
+    }
+
+    private void updatePotion()
+    {
+        
+
+        if (PotionManager.instance.tiempoActual >= PotionManager.instance.tiempoEspera)
+        {
+            if (objetoPosition != null)
+            {
+                objetoPosition.SetActive(true);//Activar potion
+            }
+        }
     }
 
     private void updateJumps()
@@ -126,6 +144,15 @@ public class PlayerController : MonoBehaviour
             }
             
         }
+
+        if (contador < 0)
+        {
+            contador = 0;
+        }
+        if (contador > 1)
+        {
+            contador = 1;
+        }
     }
 
     private void OnControllerColliderHit(ControllerColliderHit hit)
@@ -133,7 +160,10 @@ public class PlayerController : MonoBehaviour
         if (hit.gameObject.CompareTag("potion"))
         {
             contador++;
-            Destroy(hit.gameObject);
+            hit.gameObject.SetActive(false);// Ocultar potion
+            PotionManager.instance.tiempoActual = 0; // Reiniciar el timepo  a 0
+
+            objetoPosition = hit.gameObject;
         }
     }
 

@@ -88,6 +88,7 @@
     <Compile Include="Assets\Scripts\Enemies\EnemyOrcBehavior.cs" />
     <Compile Include="Assets\Scripts\Enemies\bombsBehavior.cs" />
     <Compile Include="Assets\Scripts\Player\CollisionTrap.cs" />
+    <Compile Include="Assets\Scripts\Player\Collisions\CollisionBackgroundDead.cs" />
     <Compile Include="Assets\Scripts\Player\Collisions\CollisionEnemy.cs" />
     <Compile Include="Assets\Scripts\Player\Collisions\CollisionStar.cs" />
     <Compile Include="Assets\Scripts\Player\LivesManger.cs" />

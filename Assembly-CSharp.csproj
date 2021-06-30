@@ -67,10 +67,25 @@
     <Compile Include="Assets\City\Common Scripts\Turn_Move.cs" />
     <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\MouseLook.cs" />
     <Compile Include="Assets\City\_3D Cartoon Level Pack Vol 1\_Scripts\Waypoint.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\1_ParticleSystems\1_Combat\1_Attacks\CombatAttack.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\1_ParticleSystems\2_Family\RotatorY.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\1_ParticleSystems\2_Family\RotatorZ.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\1_ParticleSystems\2_Family\UpDown.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\2_Spawner\MultiParticleSystemSpawner.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\2_Spawner\ParticleSystemSpawner.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\3_Hit\Hit.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\3_Hit\ReceiveMaterialChangeByHit.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\4_Helpers\LifeTime.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\4_Helpers\LookAt.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\4_Helpers\Strings.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\2_Scripts\4_Helpers\Test.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\Demo\CameraNavigator.cs" />
+    <Compile Include="Assets\Mezanix\MezanixFX_Free_1_1\Demo\GetActivePArticleSystemName.cs" />
     <Compile Include="Assets\Scripts\Camera\FollowPlayer.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyControllerDragonTiny.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyFollow.cs" />
     <Compile Include="Assets\Scripts\Enemies\EnemyOrcBehavior.cs" />
+    <Compile Include="Assets\Scripts\Enemies\bombsBehavior.cs" />
     <Compile Include="Assets\Scripts\Player\CollisionTrap.cs" />
     <Compile Include="Assets\Scripts\Player\Collisions\CollisionEnemy.cs" />
     <Compile Include="Assets\Scripts\Player\Collisions\CollisionStar.cs" />
@@ -80,6 +95,7 @@
     <Compile Include="Assets\Scripts\Player\aumentarVida.cs" />
     <Compile Include="Assets\Scripts\SceneManager\ManageScenes.cs" />
     <Compile Include="Assets\Scripts\items\PortalsBehavior.cs" />
+    <None Include="Assets\Mezanix\MezanixFX_Free_1_1\0_Documentation\ParticleSystemsList.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.22f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>

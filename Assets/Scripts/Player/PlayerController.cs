@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,10 +24,13 @@ public class PlayerController : MonoBehaviour
 
     Vector3 direction;
     Vector3 moveDir;
+    public Vector3 positionFireball;
     public CharacterController controller;
     public float turnSmothTime = 0.1f;
     float turnSmoothVelocity;
 
+
+    public GameObject[] shotsPrefabs;
 
     private void Start()
     {
@@ -85,22 +89,43 @@ public class PlayerController : MonoBehaviour
             float targetAngle = Mathf.Atan2(direction.x, direction.z) * Mathf.Rad2Deg;//angulo a donde girar
             float angle = Mathf.SmoothDampAngle(transform.eulerAngles.y, targetAngle, ref turnSmoothVelocity, turnSmothTime);
 
-            transform.rotation = Quaternion.Euler(0f, angle, 0f);
+            gameObject.transform.rotation = Quaternion.Euler(0f, angle, 0f);//asigna angulo de rotacion
 
             moveDir = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
 
             controller.Move(moveDir.normalized * speedPlayer * Time.deltaTime); // move in diferent directions
         }
 
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            shotAttack();
+        }
+
+        positionFireball = new Vector3(gameObject.transform.position.x, gameObject.transform.position.y, gameObject.transform.position.z);
+
+    }
+
+    private void shotAttack()
+    {
+        anim.SetTrigger("strafing_ready");
+        Instantiate(shotsPrefabs[0], positionFireball, gameObject.transform.rotation);
+
+
+    }
+
+    IEnumerator wait()
+    {
+        yield return new WaitForSeconds(1);
         
-
-
     }
 
     private void FixedUpdate()
     {
 
-        Debug.Log(verticalInput + " + " + horizontalInput);
+
+        
+
+        //Debug.Log(verticalInput + " + " + horizontalInput);
 
         //Asignar animacion si presiona "arriba" o "abajo" o derecha izquierda
         if (verticalInput != 0)

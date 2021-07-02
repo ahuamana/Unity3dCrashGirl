@@ -31,8 +31,8 @@ public class LivesManger : MonoBehaviour
         {
             vidaActual -= cantidad;
         }
-        
 
+        
         barraVida.value = vidaActual;
 
     }

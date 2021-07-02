@@ -25,7 +25,9 @@ public class StarManager : MonoBehaviour
     {
         cantidadEstrellas += estrellasRecogidas;
         estrellasTexto.text = cantidadEstrellas.ToString()+ " Estrellas" ;
-        
+
+        PlayerPrefs.SetFloat("estrellasTotales", cantidadEstrellas);//Guardar monedas totales a nivel global
+
     }
 
 }
